@@ -9,7 +9,7 @@ export default function Layout({ children } : { children: React.ReactNode }) {
                 sx={{
                     mt: 4,
                     mb: 4,
-                    backgroundColor: "white"
+                    color: "white"
                 }}
             >
                 { children }

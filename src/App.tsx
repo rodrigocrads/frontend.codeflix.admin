@@ -10,24 +10,10 @@ import { Typography } from "@mui/material";
 import {
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
-
-const Home = () => (
-  <Box>
-    <Typography>
-      Home
-    </Typography>
-  </Box>
-);
-
-const About = () => (
-  <Box>
-    <Typography>
-      About
-    </Typography>
-  </Box>
-);
+import { ListCategory } from "./features/category/ListCategory";
+import { CreateCategory } from "./features/category/CreateCategory";
+import { EditCategory } from "./features/category/EditCategory";
 
 export const App = () => {
   return (
@@ -42,11 +28,17 @@ export const App = () => {
         >
           <Header />
           <Layout>
-            <h1>Welcome to react router!</h1>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route />
+              <Route path="/" element={<ListCategory />} />
+              <Route path="/categories" element={<ListCategory />} />
+              <Route path="/categories/create" element={<CreateCategory />} />
+              <Route path="/categories/edit/:id" element={<EditCategory />} />
+              <Route path="*" element={
+                <Box sx={{ color: "#fff" }}>
+                  <Typography variant="h1">404</Typography>
+                  <Typography variant="h2">Page not found</Typography>
+                </Box>
+              } />
             </Routes>
           </Layout>
         </Box>
