@@ -11,9 +11,9 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { ListCategory } from "./features/category/ListCategory";
-import { CreateCategory } from "./features/category/CreateCategory";
-import { EditCategory } from "./features/category/EditCategory";
+import { ListCategory } from "./features/categories/ListCategory";
+import { CreateCategory } from "./features/categories/CreateCategory";
+import { EditCategory } from "./features/categories/EditCategory";
 
 export const App = () => {
   return (
