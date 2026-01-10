@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 export interface Category {
     id: string,
     name: string,
@@ -43,4 +42,3 @@ const categoriesSlice = createSlice({
 export default categoriesSlice.reducer;
 
 export const selectCategories = (state: any) => state.categories;
-

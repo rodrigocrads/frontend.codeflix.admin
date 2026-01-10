@@ -1,9 +1,10 @@
-import { Box, Button, IconButton } from "@mui/material";
+import { Box, Button, IconButton, Toolbar } from "@mui/material";
 import { useAppSelector } from "../../app/hooks";
 import { Category, selectCategories } from "./categorySlice";
 import { Link } from "react-router-dom";
 import { DataGrid, GridRowsProp, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import DeleteIcon from "@mui/icons-material/Delete";
+import { GridToolbar } from "@mui/x-data-grid/internals";
 
 export const ListCategory = () => {
     const categories = useAppSelector(selectCategories);
@@ -38,7 +39,7 @@ export const ListCategory = () => {
         },
         {
             field: 'createdAt',
-            headerName: 'Created At',
+            headerName: 'Created At', 
             flex: 1,
         },
         { 
@@ -74,11 +75,17 @@ export const ListCategory = () => {
                     New Category
                 </Button>
             </Box>
-            {/* {categories.map((category: Category) => (
-                <Typography key={category.id}>{category.name}</Typography>
-            ))} */}
             <div style={{ height: 300, width: '100%' }}>
-                <DataGrid rows={rows} columns={columns} />
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                    disableColumnFilter
+                    disableColumnSelector
+                    disableDensitySelector
+                    disableRowSelectionOnClick
+                    disableMultipleRowSelection
+                    showToolbar
+                />
             </div>
         </Box>
     );
